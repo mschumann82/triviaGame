@@ -6,6 +6,7 @@ $(document).ready(function() {
     var incorrect = 0;
     var unAnswered = 0;
     var gameRunning = false;
+    var ten;
 
     var question1 = {
         ques1: "Whats 1 + 1?",
@@ -47,13 +48,14 @@ $(document).ready(function() {
 
     $("#start").on("click", function() {
         gameRunning = true;
-        
+        if (gameRunning === true){
         run();
         pop();
-       
-        console.log(unAnswered);
         
-
+       
+        
+        
+        }
 
 
 
@@ -61,6 +63,8 @@ $(document).ready(function() {
 
 
     function pop() {
+      
+
         $("#start").html("<h2>:" + time + "</h2>");
         $("#question").html("<h2>" + question1.ques1 + "</h2>");
         $("#answer1").html("<h2>" + question1.ans1 + "</h2>");
@@ -69,35 +73,58 @@ $(document).ready(function() {
         $("#answer4").html("<h2>" + question1.ans4 + "</h2>");
 
         $("#answer1").on("click", function() {
+            gameRunning = false;
             clearInterval(intervalId);
             correct++;
             console.log(correct);
+            rightOne();
             
             
           });
           $("#answer2").on("click", function() {
+            gameRunning = false;
             clearInterval(intervalId);
             incorrect++;
             console.log(incorrect);
+            wrongOne();
             
             
           });
           $("#answer3").on("click", function() {
+            gameRunning = false;
             clearInterval(intervalId);
             incorrect++;
             console.log(incorrect);
+            wrongOne();
             
             
           });
           $("#answer4").on("click", function() {
+            gameRunning = false;
             clearInterval(intervalId);
             incorrect++;
             console.log(incorrect);
+            wrongOne();
             
             
           });
 
-    }
+          if (gameRunning === true) {
+            ten = setTimeout(function tenSeconds() {
+            gameRunning = false;
+            clearInterval(intervalId);
+            time = 10;
+            unAnswered++;
+            console.log(unAnswered);
+            $("#question").html("<h2>" + question1.ques1 + "</h2>");
+            $("#answer1").html("<h2>The correct answer is 2.</h2>");
+            $("#answer2").html("<h2></h2>");
+            $("#answer3").html("<h2></h2>");
+            $("#answer4").html("<h2></h2>");
+
+           }, 10000);
+          }
+      }
 
     function run() {
         if (gameRunning === true) {
@@ -113,25 +140,75 @@ $(document).ready(function() {
   
         $("#start").html("<h2>:" + time + "</h2>");
   
-        if (time === 0) {
-  
-          timeUp();
-  
-          alert("Time Up!");
-        }
+        
       }
 
-      function timeUp() {
-        unAnswered++;
+      /*function timeUpOne() {
         gameRunning = false;
         clearInterval(intervalId);
         time = 10;
-      }
+        unAnswered++;
+        console.log(unAnswered);
+        $("#question").html("<h2>" + question1.ques1 + "</h2>");
+        $("#answer1").html("<h2>The correct answer is 2.</h2>");
+        $("#answer2").html("<h2></h2>");
+        $("#answer3").html("<h2></h2>");
+        $("#answer4").html("<h2></h2>");
+        ten = setTimeout(function tenSeconds() {
+        
+          
+          
+          
+  
+          
+          
+        }, 10000);
+      
+      }*/
 
 
       function stop() {
 
         clearInterval(intervalId);
+      }
+
+      
+
+      function rightOne() {
+        if (gameRunning === false) {
+        $("#question").html("<h2>" + question1.ques1 + "</h2>");
+        $("#answer1").html("<h2>The correct answer is 2.</h2>");
+        $("#answer2").html("<h2></h2>");
+        $("#answer3").html("<h2></h2>");
+        $("#answer4").html("<h2></h2>");
+        ten = setTimeout(function tenSeconds() {
+        
+          alert("Ten Seconds!");
+          //luck();
+  
+          
+          
+        }, 10000);
+      }
+      }
+
+      function wrongOne() {
+        if (gameRunning === false) {
+        $("#question").html("<h2>" + question1.ques1 + "</h2>");
+        $("#answer1").html("<h2>The correct answer is 2.</h2>");
+        $("#answer2").html("<h2></h2>");
+        $("#answer3").html("<h2></h2>");
+        $("#answer4").html("<h2></h2>");
+        ten = setTimeout(function tenSeconds() {
+        
+          alert("Ten Seconds!");
+          //luck();
+  
+          
+          
+        }, 10000);
+        }
+
       }
 
 
