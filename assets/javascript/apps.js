@@ -66,9 +66,9 @@ $(document).ready(function() {
         $("#answer3").html("<h2>" + question1.ans3 + "</h2>");
         $("#answer4").html("<h2>" + question1.ans4 + "</h2>");
 
-        if (gameRunning === true) {
+        if (correct === 0 && incorrect === 0) {
 
-        $("#answer1").on("click", function() {
+        $("#answer1").one("click", function() {
             
             gameRunning = false;
             clearInterval(intervalId);
@@ -78,7 +78,7 @@ $(document).ready(function() {
             
             
           });
-          $("#answer2").on("click", function() {
+          $("#answer2").one("click", function() {
             gameRunning = false;
             clearInterval(intervalId);
             incorrect++;
@@ -87,7 +87,7 @@ $(document).ready(function() {
             
             
           });
-          $("#answer3").on("click", function() {
+          $("#answer3").one("click", function() {
             gameRunning = false;
             clearInterval(intervalId);
             incorrect++;
@@ -96,7 +96,7 @@ $(document).ready(function() {
             
             
           });
-          $("#answer4").on("click", function() {
+          $("#answer4").one("click", function() {
             gameRunning = false;
             clearInterval(intervalId);
             incorrect++;
@@ -242,27 +242,27 @@ $(document).ready(function() {
       $("#answer3").html("<h2>" + question2.ans3 + "</h2>");
       $("#answer4").html("<h2>" + question2.ans4 + "</h2>");
 
-      if (gameRunningTwo === true) {
+      if (correct === 1 || incorrect === 1 || unAnswered === 1) {
 
-      $("#answer1").on("click", function() {
+      $("#answer1").one("click", function() {
+          gameRunningTwo = false;
+          clearInterval(intervalId);
+          incorrect++;
+          console.log(incorrect);
+          wrongTwo();
+      
+      
+      });
+      $("#answer2").one("click", function() {
           gameRunningTwo = false;
           clearInterval(intervalId);
           correct++;
           console.log(correct);
           rightTwo();
       
-      
-      });
-      $("#answer2").on("click", function() {
-          gameRunningTwo = false;
-          clearInterval(intervalId);
-          incorrect++;
-          console.log(incorrect);
-          wrongTwo();
-      
         });
 
-      $("#answer3").on("click", function() {
+      $("#answer3").one("click", function() {
           gameRunningTwo = false;
           clearInterval(intervalId);
           incorrect++;
@@ -272,7 +272,7 @@ $(document).ready(function() {
       
         });
 
-      $("#answer4").on("click", function() {
+      $("#answer4").one("click", function() {
           gameRunningTwo = false;
           clearInterval(intervalId);
           incorrect++;
@@ -338,18 +338,9 @@ function sup() {
   $("#answer3").html("<h2>" + question3.ans3 + "</h2>");
   $("#answer4").html("<h2>" + question3.ans4 + "</h2>");
 
-  if (gameRunningThree === true) {
+  if (correct > 1 || incorrect > 1 || unAnswered > 1) {
 
-  $("#answer1").on("click", function() {
-      gameRunningThree = false;
-      clearInterval(intervalId);
-      incorrect++;
-      console.log(incorrect);
-      rightThree();
-      
-      
-    });
-    $("#answer2").on("click", function() {
+  $("#answer1").one("click", function() {
       gameRunningThree = false;
       clearInterval(intervalId);
       incorrect++;
@@ -358,7 +349,7 @@ function sup() {
       
       
     });
-    $("#answer3").on("click", function() {
+    $("#answer2").one("click", function() {
       gameRunningThree = false;
       clearInterval(intervalId);
       incorrect++;
@@ -367,12 +358,21 @@ function sup() {
       
       
     });
-    $("#answer4").on("click", function() {
+    $("#answer3").one("click", function() {
+      gameRunningThree = false;
+      clearInterval(intervalId);
+      incorrect++;
+      console.log(incorrect);
+      wrongThree();
+      
+      
+    });
+    $("#answer4").one("click", function() {
       gameRunningThree = false;
       clearInterval(intervalId);
       correct++;
       console.log(correct);
-      wrongThree();
+      rightThree();
       
       
     });
