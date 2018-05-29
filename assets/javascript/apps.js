@@ -12,27 +12,27 @@ $(document).ready(function() {
     
 
     var question1 = {
-        ques1: "Whats 1 + 1?",
-        ans1: 2,
-        ans2: 4,
-        ans3: 1,
-        ans4: 0,
+        ques1: "Whats is the surname give to bastards in Dorne?",
+        ans1: "Sand",
+        ans2: "Stone",
+        ans3: "Rivers",
+        ans4: "Waters",
     };
 
     var question2 = {
-        ques2: "Whats 2 + 2?",
-        ans1: 2,
-        ans2: 4,
-        ans3: 1,
-        ans4: 0,
+        ques2: "Who was the Mad King's firstborn son?",
+        ans1: "Aemon Targaryen",
+        ans2: "Rhaegar Targaryen",
+        ans3: "Aegon Targaryen",
+        ans4: "Viserys Targaryen",
     };
 
     var question3 = {
-        ques3: "Whats 3 * 3?",
-        ans1: 2,
-        ans2: 4,
-        ans3: 18,
-        ans4: 9,
+        ques3: "In Which city does Arya Stark train to become a Faceless Man?",
+        ans1: "Meereen",
+        ans2: "Pentos",
+        ans3: "Astapor",
+        ans4: "Braavos",
     };
 
 
@@ -136,12 +136,12 @@ $(document).ready(function() {
           unAnswered++;
           console.log(unAnswered);
           $("#question").html("<h2>" + question1.ques1 + "</h2>");
-          $("#answer1").html("<h2>The correct answer is 2.</h2>");
+          $("#answer1").html("<h2>The correct answer is Sand.</h2>");
           $("#answer2").html("<h2></h2>");
           $("#answer3").html("<h2></h2>");
           $("#answer4").html("<h2></h2>");
             ten = setTimeout(function tenSeconds(){
-              
+              noClick();
               luck();
             }, 10000);
               
@@ -155,12 +155,12 @@ $(document).ready(function() {
           unAnswered++;
           console.log(unAnswered);
           $("#question").html("<h2>" + question2.ques2 + "</h2>");
-          $("#answer1").html("<h2>The correct answer is 4.</h2>");
+          $("#answer1").html("<h2>The correct answer is Rhaegar Targaryen.</h2>");
           $("#answer2").html("<h2></h2>");
           $("#answer3").html("<h2></h2>");
           $("#answer4").html("<h2></h2>");
           ten = setTimeout(function tenSeconds(){
-              
+              noClick();
               sup();
             }, 10000);
              
@@ -174,12 +174,13 @@ $(document).ready(function() {
         unAnswered++;
         console.log(unAnswered);
         $("#question").html("<h2>" + question3.ques3 + "</h2>");
-        $("#answer1").html("<h2>The correct answer is 9.</h2>");
+        $("#answer1").html("<h2>The correct answer is Braavos.</h2>");
         $("#answer2").html("<h2></h2>");
         $("#answer3").html("<h2></h2>");
         $("#answer4").html("<h2></h2>");
           ten = setTimeout(function tenSeconds(){
-            alert("time up");
+            noClick();
+            results();
             
           }, 10000);
             
@@ -199,7 +200,7 @@ $(document).ready(function() {
       function rightOne() {
         if (gameRunning === false) {
         $("#question").html("<h2>" + question1.ques1 + "</h2>");
-        $("#answer1").html("<h2>The correct answer is 2.</h2>");
+        $("#answer1").html("<h2>The correct answer is Sand.</h2>");
         $("#answer2").html("<h2></h2>");
         $("#answer3").html("<h2></h2>");
         $("#answer4").html("<h2></h2>");
@@ -216,7 +217,7 @@ $(document).ready(function() {
       function wrongOne() {
         if (gameRunning === false) {
         $("#question").html("<h2>" + question1.ques1 + "</h2>");
-        $("#answer1").html("<h2>The correct answer is 2.</h2>");
+        $("#answer1").html("<h2>The correct answer is Sand.</h2>");
         $("#answer2").html("<h2></h2>");
         $("#answer3").html("<h2></h2>");
         $("#answer4").html("<h2></h2>");
@@ -294,7 +295,7 @@ $(document).ready(function() {
 function rightTwo() {
   if (gameRunningTwo === false) {
   $("#question").html("<h2>" + question2.ques2 + "</h2>");
-  $("#answer1").html("<h2>The correct answer is 4.</h2>");
+  $("#answer1").html("<h2>The correct answer is Rhaegar Targaryen.</h2>");
   $("#answer2").html("<h2></h2>");
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
@@ -312,7 +313,7 @@ function rightTwo() {
 function wrongTwo() {
   if (gameRunningTwo === false) {
   $("#question").html("<h2>" + question2.ques2 + "</h2>");
-  $("#answer1").html("<h2>The correct answer is 4.</h2>");
+  $("#answer1").html("<h2>The correct answer is Rhaegar Targaryen.</h2>");
   $("#answer2").html("<h2></h2>");
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
@@ -348,7 +349,7 @@ function sup() {
   
 
   $("#answer1").on("click", function() {
-    noClick();
+      noClick();
       gameRunningThree = false;
       clearInterval(intervalId);
       incorrect++;
@@ -395,13 +396,13 @@ function sup() {
 function rightThree() {
   if (gameRunningThree === false) {
   $("#question").html("<h2>" + question3.ques3 + "</h2>");
-  $("#answer1").html("<h2>The correct answer is 9.</h2>");
+  $("#answer1").html("<h2>The correct answer is Braavos.</h2>");
   $("#answer2").html("<h2></h2>");
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
     noClick();
-    alert("time up");
+    results();
     
   }, 10000);
 }
@@ -411,13 +412,13 @@ function rightThree() {
 function wrongThree() {
   if (gameRunningThree === false) {
   $("#question").html("<h2>" + question3.ques3 + "</h2>");
-  $("#answer1").html("<h2>The correct answer is 9.</h2>");
+  $("#answer1").html("<h2>The correct answer is Braavos.</h2>");
   $("#answer2").html("<h2></h2>");
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
     noClick();
-    alert("time up");
+    results();
     
   }, 10000);
   }
@@ -425,10 +426,39 @@ function wrongThree() {
 }
 
 function noClick() {
+  $("#start").off("click");
   $("#answer1").off("click");
   $("#answer2").off("click");
   $("#answer3").off("click");
   $("#answer4").off("click");
+}
+
+function results() {
+  $("#question").html("<h2></h2>");
+  $("#answer1").html("<h2> Correct: " + correct + "</h2>");
+  $("#answer2").html("<h2> Incorrect: " + incorrect + "</h2>");
+  $("#answer3").html("<h2> Unanswered: " + unAnswered + "</h2>");
+  $("#answer4").html("<h2>Reset</h2>");
+
+
+  $("#answer4").on("click", function() {
+     time = 10;
+     intervalID;
+     start = "Start";
+     correct = 0;
+     incorrect = 0;
+     unAnswered = 0;
+     gameRunning = false;
+     gameRunningTwo = false;
+     gameRunningThree = false;
+     ten;
+     pop();
+
+    
+    
+  });
+
+
 }
 
 
