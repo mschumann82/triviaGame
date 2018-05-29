@@ -66,10 +66,10 @@ $(document).ready(function() {
         $("#answer3").html("<h2>" + question1.ans3 + "</h2>");
         $("#answer4").html("<h2>" + question1.ans4 + "</h2>");
 
-        if (correct === 0 && incorrect === 0) {
+        
 
-        $("#answer1").one("click", function() {
-            
+        $("#answer1").on("click", function() {
+            noClick();
             gameRunning = false;
             clearInterval(intervalId);
             correct++;
@@ -78,7 +78,8 @@ $(document).ready(function() {
             
             
           });
-          $("#answer2").one("click", function() {
+          $("#answer2").on("click", function() {
+            noClick();
             gameRunning = false;
             clearInterval(intervalId);
             incorrect++;
@@ -87,7 +88,8 @@ $(document).ready(function() {
             
             
           });
-          $("#answer3").one("click", function() {
+          $("#answer3").on("click", function() {
+            noClick();
             gameRunning = false;
             clearInterval(intervalId);
             incorrect++;
@@ -96,7 +98,8 @@ $(document).ready(function() {
             
             
           });
-          $("#answer4").one("click", function() {
+          $("#answer4").on("click", function() {
+            noClick();
             gameRunning = false;
             clearInterval(intervalId);
             incorrect++;
@@ -105,7 +108,7 @@ $(document).ready(function() {
             
             
           });
-        } //end of if
+        
           
       }
 
@@ -202,7 +205,7 @@ $(document).ready(function() {
         $("#answer4").html("<h2></h2>");
         ten = setTimeout(function tenSeconds() {
           
-          
+          noClick();
           luck();
   
         }, 10000);
@@ -218,7 +221,7 @@ $(document).ready(function() {
         $("#answer3").html("<h2></h2>");
         $("#answer4").html("<h2></h2>");
         ten = setTimeout(function tenSeconds() {
-          
+          noClick();
           luck();
   
         }, 10000);
@@ -242,9 +245,10 @@ $(document).ready(function() {
       $("#answer3").html("<h2>" + question2.ans3 + "</h2>");
       $("#answer4").html("<h2>" + question2.ans4 + "</h2>");
 
-      if (correct === 1 || incorrect === 1 || unAnswered === 1) {
+      
 
-      $("#answer1").one("click", function() {
+      $("#answer1").on("click", function() {
+          noClick();
           gameRunningTwo = false;
           clearInterval(intervalId);
           incorrect++;
@@ -253,7 +257,8 @@ $(document).ready(function() {
       
       
       });
-      $("#answer2").one("click", function() {
+      $("#answer2").on("click", function() {
+        noClick();
           gameRunningTwo = false;
           clearInterval(intervalId);
           correct++;
@@ -262,7 +267,8 @@ $(document).ready(function() {
       
         });
 
-      $("#answer3").one("click", function() {
+      $("#answer3").on("click", function() {
+        noClick();
           gameRunningTwo = false;
           clearInterval(intervalId);
           incorrect++;
@@ -272,7 +278,8 @@ $(document).ready(function() {
       
         });
 
-      $("#answer4").one("click", function() {
+      $("#answer4").on("click", function() {
+        noClick();
           gameRunningTwo = false;
           clearInterval(intervalId);
           incorrect++;
@@ -280,7 +287,7 @@ $(document).ready(function() {
           wrongTwo();
       
         });
-      }// end of if
+      
       
       }
     
@@ -292,7 +299,7 @@ function rightTwo() {
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
-  
+    noClick();
     
     sup();
     
@@ -310,7 +317,7 @@ function wrongTwo() {
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
-    
+    noClick();
     sup();
     
 
@@ -338,9 +345,10 @@ function sup() {
   $("#answer3").html("<h2>" + question3.ans3 + "</h2>");
   $("#answer4").html("<h2>" + question3.ans4 + "</h2>");
 
-  if (correct > 1 || incorrect > 1 || unAnswered > 1) {
+  
 
-  $("#answer1").one("click", function() {
+  $("#answer1").on("click", function() {
+    noClick();
       gameRunningThree = false;
       clearInterval(intervalId);
       incorrect++;
@@ -349,7 +357,8 @@ function sup() {
       
       
     });
-    $("#answer2").one("click", function() {
+    $("#answer2").on("click", function() {
+      noClick();
       gameRunningThree = false;
       clearInterval(intervalId);
       incorrect++;
@@ -358,7 +367,8 @@ function sup() {
       
       
     });
-    $("#answer3").one("click", function() {
+    $("#answer3").on("click", function() {
+      noClick();
       gameRunningThree = false;
       clearInterval(intervalId);
       incorrect++;
@@ -367,7 +377,8 @@ function sup() {
       
       
     });
-    $("#answer4").one("click", function() {
+    $("#answer4").on("click", function() {
+      noClick();
       gameRunningThree = false;
       clearInterval(intervalId);
       correct++;
@@ -377,7 +388,7 @@ function sup() {
       
     });
     
-  }// end of if
+  
     
 }
 
@@ -389,7 +400,7 @@ function rightThree() {
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
-  
+    noClick();
     alert("time up");
     
   }, 10000);
@@ -405,12 +416,19 @@ function wrongThree() {
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
-    
+    noClick();
     alert("time up");
     
   }, 10000);
   }
   
+}
+
+function noClick() {
+  $("#answer1").off("click");
+  $("#answer2").off("click");
+  $("#answer3").off("click");
+  $("#answer4").off("click");
 }
 
 
