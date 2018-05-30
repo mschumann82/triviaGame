@@ -137,7 +137,7 @@ $(document).ready(function() {
           console.log(unAnswered);
           $("#question").html("<h2>" + question1.ques1 + "</h2>");
           $("#answer1").html("<h2>The correct answer is Sand.</h2>");
-          $("#answer2").html("<h2></h2>");
+          $("#answer2").html('<img src = "assets/images/oberyn.jpg">');
           $("#answer3").html("<h2></h2>");
           $("#answer4").html("<h2></h2>");
             ten = setTimeout(function tenSeconds(){
@@ -156,7 +156,7 @@ $(document).ready(function() {
           console.log(unAnswered);
           $("#question").html("<h2>" + question2.ques2 + "</h2>");
           $("#answer1").html("<h2>The correct answer is Rhaegar Targaryen.</h2>");
-          $("#answer2").html("<h2></h2>");
+          $("#answer2").html('<img src = "assets/images/question2.jpg">');
           $("#answer3").html("<h2></h2>");
           $("#answer4").html("<h2></h2>");
           ten = setTimeout(function tenSeconds(){
@@ -175,7 +175,7 @@ $(document).ready(function() {
         console.log(unAnswered);
         $("#question").html("<h2>" + question3.ques3 + "</h2>");
         $("#answer1").html("<h2>The correct answer is Braavos.</h2>");
-        $("#answer2").html("<h2></h2>");
+        $("#answer2").html('<img src = "assets/images/arya.png">');
         $("#answer3").html("<h2></h2>");
         $("#answer4").html("<h2></h2>");
           ten = setTimeout(function tenSeconds(){
@@ -201,7 +201,7 @@ $(document).ready(function() {
         if (gameRunning === false) {
         $("#question").html("<h2>" + question1.ques1 + "</h2>");
         $("#answer1").html("<h2>The correct answer is Sand.</h2>");
-        $("#answer2").html("<h2></h2>");
+        $("#answer2").html('<img src = "assets/images/oberyn.jpg">');
         $("#answer3").html("<h2></h2>");
         $("#answer4").html("<h2></h2>");
         ten = setTimeout(function tenSeconds() {
@@ -218,7 +218,7 @@ $(document).ready(function() {
         if (gameRunning === false) {
         $("#question").html("<h2>" + question1.ques1 + "</h2>");
         $("#answer1").html("<h2>The correct answer is Sand.</h2>");
-        $("#answer2").html("<h2></h2>");
+        $("#answer2").html('<img src = "assets/images/oberyn.jpg">');
         $("#answer3").html("<h2></h2>");
         $("#answer4").html("<h2></h2>");
         ten = setTimeout(function tenSeconds() {
@@ -296,7 +296,7 @@ function rightTwo() {
   if (gameRunningTwo === false) {
   $("#question").html("<h2>" + question2.ques2 + "</h2>");
   $("#answer1").html("<h2>The correct answer is Rhaegar Targaryen.</h2>");
-  $("#answer2").html("<h2></h2>");
+  $("#answer2").html('<img src = "assets/images/question2.jpg">');
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
@@ -314,7 +314,7 @@ function wrongTwo() {
   if (gameRunningTwo === false) {
   $("#question").html("<h2>" + question2.ques2 + "</h2>");
   $("#answer1").html("<h2>The correct answer is Rhaegar Targaryen.</h2>");
-  $("#answer2").html("<h2></h2>");
+  $("#answer2").html('<img src = "assets/images/question2.jpg">');
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
@@ -397,7 +397,7 @@ function rightThree() {
   if (gameRunningThree === false) {
   $("#question").html("<h2>" + question3.ques3 + "</h2>");
   $("#answer1").html("<h2>The correct answer is Braavos.</h2>");
-  $("#answer2").html("<h2></h2>");
+  $("#answer2").html('<img src = "assets/images/arya.png">');
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
@@ -413,7 +413,7 @@ function wrongThree() {
   if (gameRunningThree === false) {
   $("#question").html("<h2>" + question3.ques3 + "</h2>");
   $("#answer1").html("<h2>The correct answer is Braavos.</h2>");
-  $("#answer2").html("<h2></h2>");
+  $("#answer2").html('<img src = "assets/images/arya.png">');
   $("#answer3").html("<h2></h2>");
   $("#answer4").html("<h2></h2>");
   ten = setTimeout(function tenSeconds() {
